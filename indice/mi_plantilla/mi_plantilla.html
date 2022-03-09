@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% if ifNombre < 5 %}
+    <p style = "color : red">{{nombre}}</p>
+    <p style = "color : blue">{{apellido}}</p>
+    {% else %}
+    <p style = "color : blue">{{nombre}}</p>
+    <p style = "color : red">{{apellido}}</p>
+    {% endif %}
+
+    {% for x in lista %}
+    <p style = "color : blue">{{x}}</p>
+    {% endfor %}
+    
+</body>
+</html>

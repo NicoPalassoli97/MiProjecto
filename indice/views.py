@@ -1,10 +1,12 @@
+
 from re import template
+from django.shortcuts import render
 from django.template import Context, Template, loader
 from django.http import HttpResponse
 import random
 
 def inicio(request):
-    return HttpResponse("Aguante BOCAAA")
+    return render(request,'index.html', {})
 
 def another_view(request):
     return HttpResponse('''<h1>Cuando me muera no quiero nada de flores </h1>''')
@@ -36,8 +38,11 @@ def mi_plantilla(request):
         'lista':lista
     }
     
-    #version nueva:
-    template = loader.get_template('mi_plantilla.html')
-    plantilla_preparada = template.render(diccionario_de_datos)  
+    #version nueva(Loader):
+    #template = loader.get_template('mi_plantilla.html')
+    #plantilla_preparada = template.render(diccionario_de_datos)  
+    #return HttpResponse(plantilla_preparada)
+
+    #version Render:
+    return render(request,'indice/mi_plantilla.html',diccionario_de_datos)
     
-    return HttpResponse(plantilla_preparada)
